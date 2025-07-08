@@ -1,0 +1,14 @@
+{
+  "data" : {
+    "QA" : {
+      "URL" : "http://www.automationpractice.pl/index.php"
+    },
+    "DEV" : {
+      "URL" : "http://www.automationpractice.pl/index.php"
+    },
+    "UAT" : {
+      "URL" : "http://www.automationpractice.pl/index.php"
+    }
+  }
+
+}

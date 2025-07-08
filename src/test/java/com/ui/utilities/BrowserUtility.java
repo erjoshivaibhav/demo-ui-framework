@@ -1,9 +1,13 @@
 package com.ui.utilities;
 
+import com.ui.constants.BrowserName;
+import static com.ui.constants.Environments.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.io.FileNotFoundException;
 
 public abstract class BrowserUtility {
 
@@ -13,17 +17,18 @@ public abstract class BrowserUtility {
         this.driver = driver;
     }
 
-    public BrowserUtility(String browser) {
+    public BrowserUtility(BrowserName browser)  {
         // if condition for type of brewser and initializing the driver
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.name().equalsIgnoreCase("chrome")) {
             this.driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
+        } else if (browser.name().equalsIgnoreCase("firefox")) {
             this.driver = new FirefoxDriver();
         } else {
             throw new IllegalArgumentException("Unsupported browser,try with chrome or firefox ");
         }
         driver.manage().window().maximize();
-        driver.get("http://www.automationpractice.pl/index.php");
+//        driver.get(PropertiesUtility.getProperty("URL"));
+        driver.get(JsonUtility.readJson(QA));
     }
 
     //method to get driver
