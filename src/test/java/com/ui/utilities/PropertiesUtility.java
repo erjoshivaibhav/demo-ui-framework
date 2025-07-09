@@ -1,5 +1,7 @@
 package com.ui.utilities;
 
+import com.ui.constants.Environments;
+
 import static com.ui.constants.Environments.*;
 
 import java.io.File;
@@ -10,12 +12,12 @@ import java.util.Properties;
 
 public class PropertiesUtility {
 
-    public static String getProperty(String key)  {
+    public static String getProperty(Environments env, String key)  {
         // Implementation to read property from a properties file
         // This is a placeholder method; actual implementation will depend on the properties file structure
         try {
         Properties properties = new Properties();
-            File file = new File(System.getProperty("user.dir") +"\\configuration\\"+ QA + ".properties");
+            File file = new File(System.getProperty("user.dir") +"\\src\\test\\resources\\configuration\\"+ env + ".properties");
             properties.load(new FileInputStream(file));
             return properties.getProperty(key);
         } catch (FileNotFoundException e) {

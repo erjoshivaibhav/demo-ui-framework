@@ -1,13 +1,16 @@
 {
   "data" : {
     "QA" : {
-      "URL" : "http://www.automationpractice.pl/index.php"
+      "URL" : "http://www.automationpractice.pl/index.php",
+      "MAX_RETRY_COUNT" : 3
     },
     "DEV" : {
-      "URL" : "http://www.automationpractice.pl/index.php"
+      "URL" : "http://www.automationpractice.pl/index.php",
+      "MAX_RETRY_COUNT" : 3
     },
     "UAT" : {
-      "URL" : "http://www.automationpractice.pl/index.php"
+      "URL" : "http://www.automationpractice.pl/index.php",
+      "MAX_RETRY_COUNT" : 3
     }
   }
 
