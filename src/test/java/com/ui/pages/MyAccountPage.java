@@ -16,6 +16,12 @@ public class MyAccountPage extends BrowserUtility {
 
     //method to fetch account name
      public String getAccountName() {
-         return getDriver().findElement(ACCOUNT_NAME_LOCATOR).getText();
+        String accountName = null;
+         try {
+             accountName= getDriver().findElement(ACCOUNT_NAME_LOCATOR).getText();
+         } catch (Exception e) {
+             System.out.println("Error while fetching account name: " + e.getMessage());
+         }
+         return accountName;
      }
 }

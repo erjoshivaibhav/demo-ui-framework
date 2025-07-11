@@ -12,20 +12,10 @@ import org.testng.annotations.Test;
 import static com.ui.constants.BrowserName.CHROME;
 import static org.testng.Assert.assertEquals;
 @Listeners({com.ui.listeners.MyTestListener.class})
-public class LoginTest {
-    private HomePage homePage;
+public class LoginTest extends BaseTest {
     Logger log = LoggerUtility.getLogger(this.getClass());
 
 
-    @BeforeMethod(description = "Initialize HomePage before each test method")
-    public void setUp() {
-        homePage = new HomePage(CHROME);
-    }
-
-    @AfterMethod(description = "Exit HomePage after each test method")
-    public void tearDown() {
-        homePage.exit();
-    }
 
 
     @Test(description = "Verify successful login with valid credentials", dataProviderClass = com.dataProviders.LoginTestDataProvider.class, dataProvider = "loginDataProviderJSON")
@@ -52,7 +42,7 @@ public class LoginTest {
         assertEquals(homePage.navigateToSignInPage()
                         .login(user.getEmail(), user.getPassword())
                         .getAccountName(),
-                "Deadpool Avenger", "Account name does not match expected value.");
+                "Deadpool Avenge", "Account name does not match expected value.");
 
     }
 }

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Test Automation Suite" parallel="methods" thread-count="3" verbose="1">
+    <test name="Automated tests for Selenium web driver">
+        <classes>
+            <class name="com.ui.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>
